@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiCrop - Smart Agricultural Production Optimization Engine</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg,#2e7d32,#81c784);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:30px;
+        }
+
+        .container{
+            width:900px;
+            background:white;
+            border-radius:20px;
+            padding:40px;
+            box-shadow:0 15px 35px rgba(0,0,0,.25);
+        }
+
+        h1{
+            text-align:center;
+            color:#2e7d32;
+            margin-bottom:10px;
+        }
+
+        .subtitle{
+            text-align:center;
+            color:#555;
+            margin-bottom:35px;
+            font-size:16px;
+        }
+
+        form{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:20px;
+        }
+
+        .input-box{
+            display:flex;
+            flex-direction:column;
+        }
+
+        label{
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#333;
+        }
+
+        input{
+            padding:12px;
+            border:2px solid #ddd;
+            border-radius:10px;
+            font-size:15px;
+            transition:.3s;
+        }
+
+        input:focus{
+            outline:none;
+            border-color:#43a047;
+            box-shadow:0 0 10px rgba(67,160,71,.3);
+        }
+
+        .button{
+            grid-column:1/3;
+            text-align:center;
+            margin-top:15px;
+        }
+
+        button{
+            background:#2e7d32;
+            color:white;
+            border:none;
+            padding:15px 60px;
+            border-radius:40px;
+            font-size:18px;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        button:hover{
+            background:#1b5e20;
+            transform:scale(1.05);
+        }
+
+        .footer{
+            margin-top:30px;
+            text-align:center;
+            color:#666;
+            font-size:14px;
+        }
+
+        @media(max-width:768px){
+
+            .container{
+                width:100%;
+            }
+
+            form{
+                grid-template-columns:1fr;
+            }
+
+            .button{
+                grid-column:1;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌱 OptiCrop</h1>
+
+    <p class="subtitle">
+        Smart Agricultural Production Optimization Engine
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <div class="input-box">
+            <label>Nitrogen (N)</label>
+            <input type="number" name="N" placeholder="Enter Nitrogen Value" required>
+        </div>
+
+        <div class="input-box">
+            <label>Phosphorous (P)</label>
+            <input type="number" name="P" placeholder="Enter Phosphorous Value" required>
+        </div>
+
+        <div class="input-box">
+            <label>Potassium (K)</label>
+            <input type="number" name="K" placeholder="Enter Potassium Value" required>
+        </div>
+
+        <div class="input-box">
+            <label>Temperature (°C)</label>
+            <input type="number" step="0.01" name="temperature" placeholder="Enter Temperature" required>
+        </div>
+
+        <div class="input-box">
+            <label>Humidity (%)</label>
+            <input type="number" step="0.01" name="humidity" placeholder="Enter Humidity" required>
+        </div>
+
+        <div class="input-box">
+            <label>pH Value</label>
+            <input type="number" step="0.01" name="ph" placeholder="Enter Soil pH" required>
+        </div>
+
+        <div class="input-box">
+            <label>Rainfall (mm)</label>
+            <input type="number" step="0.01" name="rainfall" placeholder="Enter Rainfall" required>
+        </div>
+
+        <div class="button">
+            <button type="submit">
+                Predict Best Crop
+            </button>
+        </div>
+
+    </form>
+
+    <div class="footer">
+        <p>
+            AI Powered Crop Recommendation System | Smart Agricultural Production Optimization Engine
+        </p>
+    </div>
+
+</div>
+
+</body>
+
+</html>

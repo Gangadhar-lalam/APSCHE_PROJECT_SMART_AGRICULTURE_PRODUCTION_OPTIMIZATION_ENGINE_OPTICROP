@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result | OptiCrop</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+
+            background:linear-gradient(135deg,#2e7d32,#81c784);
+
+            height:100vh;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+        }
+
+        .container{
+
+            width:650px;
+
+            background:white;
+
+            border-radius:20px;
+
+            padding:40px;
+
+            text-align:center;
+
+            box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+        }
+
+        h1{
+
+            color:#2e7d32;
+
+            margin-bottom:20px;
+
+        }
+
+        p{
+
+            color:#555;
+
+            font-size:18px;
+
+            margin-bottom:25px;
+
+        }
+
+        .result-box{
+
+            background:#e8f5e9;
+
+            border:3px solid #43a047;
+
+            border-radius:15px;
+
+            padding:30px;
+
+            margin:30px 0;
+
+        }
+
+        .result-title{
+
+            font-size:22px;
+
+            color:#1b5e20;
+
+            margin-bottom:15px;
+
+            font-weight:bold;
+
+        }
+
+        .crop{
+
+            font-size:40px;
+
+            color:#2e7d32;
+
+            font-weight:bold;
+
+            text-transform:uppercase;
+
+        }
+
+        .message{
+
+            margin-top:20px;
+
+            color:#666;
+
+            font-size:17px;
+
+            line-height:28px;
+
+        }
+
+        a{
+
+            text-decoration:none;
+
+        }
+
+        button{
+
+            margin-top:30px;
+
+            background:#2e7d32;
+
+            color:white;
+
+            border:none;
+
+            padding:15px 50px;
+
+            border-radius:40px;
+
+            cursor:pointer;
+
+            font-size:18px;
+
+            transition:.3s;
+
+        }
+
+        button:hover{
+
+            background:#1b5e20;
+
+            transform:scale(1.05);
+
+        }
+
+        .footer{
+
+            margin-top:35px;
+
+            color:#777;
+
+            font-size:14px;
+
+        }
+
+        @media(max-width:768px){
+
+            .container{
+
+                width:90%;
+
+            }
+
+            .crop{
+
+                font-size:30px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌱 Crop Recommendation Result</h1>
+
+    <p>
+        Based on the soil nutrients and environmental conditions you entered,
+        our machine learning model recommends the following crop.
+    </p>
+
+    <div class="result-box">
+
+        <div class="result-title">
+
+            Recommended Crop
+
+        </div>
+
+        <div class="crop">
+
+            {{ prediction }}
+
+        </div>
+
+    </div>
+
+    <div class="message">
+
+        This recommendation is generated using the trained
+        <strong>OptiCrop Machine Learning Model</strong>.
+        It considers Nitrogen, Phosphorous, Potassium,
+        Temperature, Humidity, pH level, and Rainfall
+        to recommend the most suitable crop.
+
+    </div>
+
+    <a href="/">
+
+        <button>
+
+            Predict Another Crop
+
+        </button>
+
+    </a>
+
+    <div class="footer">
+
+        Smart Agricultural Production Optimization Engine (OptiCrop)
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
