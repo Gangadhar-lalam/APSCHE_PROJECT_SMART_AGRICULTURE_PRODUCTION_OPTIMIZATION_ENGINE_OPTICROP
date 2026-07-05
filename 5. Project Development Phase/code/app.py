@@ -15,6 +15,8 @@ def home():
 def predict():
 
     try:
+        form_data = request.form.to_dict()
+        print("Received form data:", form_data)
 
         data = CustomData(
 
@@ -39,6 +41,7 @@ def predict():
         predict_pipeline = PredictPipeline()
 
         prediction = predict_pipeline.predict(final_data)
+        print("Prediction result:", prediction)
 
         return render_template(
             "result.html",
@@ -46,10 +49,12 @@ def predict():
         )
 
     except Exception as e:
+        error_message = f"Error: {str(e)}"
+        print("Prediction error:", error_message)
 
         return render_template(
             "result.html",
-            prediction=f"Error: {str(e)}"
+            prediction=error_message
         )
 
 
